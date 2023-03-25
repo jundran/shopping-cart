@@ -1,11 +1,13 @@
 import { useNavigate } from 'react-router-dom'
 import Header from '../components/Header'
+import route from '../routes'
 
 export default function HomePage () {
+	document.title='Shopping Cart | Home'
 	const navigate = useNavigate()
 
 	function handleClick () {
-		navigate('/products')
+		navigate(route.PRODUCTS)
 	}
 
 	return (

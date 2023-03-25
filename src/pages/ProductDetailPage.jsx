@@ -19,6 +19,7 @@ export default function ProductDetailPage () {
 
 function ProductDetail ({ id }) {
 	const data = products.find(product => product.id === id)
+	document.title='Shopping Cart | Products | ' + data.name
 	return (
 		<section className='ProductDetail'>
 			<h1>{data.name}</h1>

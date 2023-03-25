@@ -4,6 +4,8 @@ import products from '../product-data'
 import routes from '../routes'
 
 export default function ProductsPage () {
+	document.title='Shopping Cart | Products'
+
 	return (
 		<>
 			<Header />

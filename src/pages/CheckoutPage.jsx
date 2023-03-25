@@ -10,6 +10,7 @@ export default function CheckoutPage () {
 	const [orderComplete, setOrderComplete] = useState(false)
 	const cart = useCart()
 	const items = cart.items
+	document.title='Shopping Cart | Checkout'
 
 	if (orderComplete) return <OrderConfirmation />
 
