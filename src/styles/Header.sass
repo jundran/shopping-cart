@@ -1,0 +1,27 @@
+.Header
+	height: 80px
+	background: #224
+	display: flex
+	justify-content: space-around
+	align-items: center
+	color: #fff
+	font-size: 1.5rem
+
+	a
+		color: inherit
+		text-decoration: none
+		display: flex
+		align-items: center
+		img
+			width: 32px
+			margin: 0 16px
+		span
+			margin-bottom: -8px
+		span.cart-total
+			font-size: 90%
+			margin-bottom: 4px
+
+@media(max-width: 500px)
+	.Header
+		span:not(.cart-total)
+			display: none

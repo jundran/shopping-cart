@@ -1,0 +1,37 @@
+.Home
+	position: relative
+
+	h1
+		text-align: center
+		margin: 0
+
+	img
+		display: block
+		width: 100vw
+		height: calc(100vh - 80px)
+		object-fit: cover
+
+	.portrait
+		display: none
+
+	.title
+		position: absolute
+		top: 10%
+		left: 5%
+		right: 5%
+		color: #fff
+		font-size: 3rem
+		padding: 0 16px
+		cursor: pointer
+		&:hover
+			color: #ccc
+
+@media(orientation: portrait)
+	.Home
+		.landscape
+			display: none
+		.portrait
+			display: block
+		.title
+			top: 70%
+			font-size: 1.5rem

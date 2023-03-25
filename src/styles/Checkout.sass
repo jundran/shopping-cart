@@ -1,0 +1,51 @@
+.Checkout
+	display: grid
+	grid-template-columns: 1fr 1fr
+	gap: 64px
+	padding: 0 5% 64px 5%
+
+.Orders
+	padding: 0 16px 16px 16px
+	a
+		color: currentColor
+		text-decoration: none
+		&:hover
+			text-decoration: underline
+
+.OrderSummary
+	padding: 0 16px 16px 16px
+	button
+		padding: 16px
+		font-weight: 600
+
+.ProductSummary,
+.OrderSummary
+	li:not(.title)
+		display: grid
+		grid-template-columns: 200px 1fr
+		margin-bottom: 16px
+	.title
+		font-weight: 700
+		text-align: center
+		background: #224
+		color: #fff
+		p
+			padding: 4px
+	.RemoveButton
+		width: fit-content
+	span:first-of-type
+		font-weight: 600
+
+@media(max-width: 800px)
+	.Checkout
+		grid-template-columns: 1fr
+		gap: 16px
+
+@media(max-width: 600px)
+	.ProductSummary,
+	.OrderSummary
+		li:not(.title)
+			grid-template-columns: 1fr
+
+		span:first-of-type
+			margin-bottom: 4px

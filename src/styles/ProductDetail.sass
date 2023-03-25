@@ -1,0 +1,51 @@
+.ProductDetail
+	max-width: 1200px
+	margin: auto
+
+	h1
+		margin: 32px
+		text-align: center
+		padding-bottom: 16px
+		border-bottom: 1px solid #999
+
+	.price
+		margin-top: 0
+
+	.product-image
+		width: 300px
+
+	.price
+		font-weight: 600
+		font-size: 1.1rem
+
+	.ManageItem
+		border-top: 1px dashed #999
+		padding: 16px 0
+
+	.ReturnLink
+		border-top: 1px dashed #222
+		padding: 16px 0
+		a
+			text-decoration: none
+			color: inherit
+			span
+				margin-right: 16px
+			&:hover
+				color: blue
+
+	.main
+		margin: 32px
+		display: grid
+		grid-template-columns: 1fr 1fr
+		grid-template-rows: repeat(3, auto)
+		.product-image
+			grid-row: 1 / 4
+
+
+@media (max-width: 700px)
+	.ProductDetail
+		.main
+			grid-template-columns: 1fr
+			.product-image
+				grid-row: 2 / 3
+				margin: 16px auto 32px auto
