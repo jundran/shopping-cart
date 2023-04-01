@@ -7,11 +7,17 @@ import routes from '../routes'
 
 export default function Orders () {
 	const cart = useCart()
+	// Sort alphabetically to keep order the same when updating quantity
+	const sortedItems = [...cart.items].sort((a, b) => {
+		const productA = products.find(p => p.id === a.id )
+		const productB = products.find(p => p.id === b.id )
+		return productA.name.toLowerCase() < productB.name.toLowerCase() ? -1 : 1
+	})
 
 	return (
 		<section className="Orders">
 			<h2>Orders</h2>
-			{cart.items.map(item => <ProductSummary key={item.id} item={item} />)}
+			{sortedItems.map(item => <ProductSummary key={item.id} item={item} />)}
 		</section>
 	)
 }
