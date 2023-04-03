@@ -11,7 +11,7 @@ export default function CartProvider ({ children }) {
 		if (savedItems) setItems(savedItems)
 	}, [])
 
-	function updateLocalStorage (updatedItems = items) {
+	function updateLocalStorage (updatedItems) {
 		console.log('Updating local storage')
 		localStorage.setItem('shopping-cart', JSON.stringify(updatedItems))
 	}
@@ -26,7 +26,11 @@ export default function CartProvider ({ children }) {
 	}
 
 	function updateItem (id, quantity) {
-		if (quantity === 0) return setItems(items.filter(item => item.id !== id))
+		if (quantity === 0) {
+			const newItems = items.filter(item => item.id !== id)
+			updateLocalStorage(newItems)
+			return setItems(newItems)
+		}
 
 		const updatedItem = {
 			id,
