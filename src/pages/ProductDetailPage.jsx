@@ -6,6 +6,7 @@ import Header from '../components/Header'
 import QuantityWidget from '../components/QuantityWidget'
 import RemoveButton from '../components/RemoveButton'
 import routes from '../routes'
+import NotFound from './404'
 
 export default function ProductDetailPage () {
 	const productId = useParams().id
@@ -19,6 +20,8 @@ export default function ProductDetailPage () {
 
 function ProductDetail ({ id }) {
 	const data = products.find(product => product.id === id)
+	if (!data) return <NotFound />
+
 	document.title='Shopping Cart | Products | ' + data.name
 	return (
 		<section className='ProductDetail'>

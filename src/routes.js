@@ -1,13 +1,15 @@
 const BASE = '/shopping-cart'
-const HOME = `${BASE}/`
-const PRODUCTS = `${BASE}/products`
-const PRODUCT_DETAIL = `${BASE}/product-detail`
-const CHECKOUT = `${BASE}/checkout`
+const HOME = '/'
+const PRODUCTS = '/products'
+const PRODUCT_DETAIL = '/product-detail'
+const CHECKOUT = '/checkout'
+const NOT_FOUND = '/404'
 
 export default {
 	BASE,
 	HOME,
 	PRODUCTS,
 	PRODUCT_DETAIL,
-	CHECKOUT
+	CHECKOUT,
+	NOT_FOUND
 }
