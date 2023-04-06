@@ -26,12 +26,11 @@
 		&:hover
 			color: #ccc
 
-@media(orientation: portrait)
-	.Home
-		.landscape
-			display: none
-		.portrait
-			display: block
-		.title
-			top: 70%
-			font-size: 1.5rem
+@media (orientation: portrait)
+	.Home .title
+		top: 70%
+		font-size: 1.5rem
+
+@media (max-height: 400px)
+	.Home .title
+		font-size: 1rem

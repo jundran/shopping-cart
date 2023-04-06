@@ -5,6 +5,8 @@ const CartContext = createContext()
 export default function CartProvider ({ children }) {
 	const [items, setItems] = useState([])
 
+	// TODO - HANDLE LOCAL STORAGE DISABLED
+
 	useEffect(() => {
 		console.log('Getting saved items from local storage')
 		const savedItems = JSON.parse(localStorage.getItem('shopping-cart'))

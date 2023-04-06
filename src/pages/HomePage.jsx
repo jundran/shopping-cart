@@ -17,8 +17,16 @@ export default function HomePage () {
 				<div onClick={handleClick} className="title">
 					<h1>Join us on an adventure to the skies!</h1>
 				</div>
-				<img className='landscape' src="/shopping-cart/home-desktop.jpg" alt="Hot air baloons background" />
-				<img className='portrait' src="/shopping-cart/home-mobile.jpg" alt="Hot air baloons background" />
+				<picture>
+					<source
+						srcSet="/shopping-cart/home-mobile.jpg"
+						media="(orientation: portrait)"
+					/>
+					<img
+						src="/shopping-cart/home-desktop.jpg"
+						alt="Hot air baloons background"
+					/>
+				</picture>
 			</section>
 		</>
 	)
