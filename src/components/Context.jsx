@@ -4,18 +4,28 @@ const CartContext = createContext()
 
 export default function CartProvider ({ children }) {
 	const [items, setItems] = useState([])
-
-	// TODO - HANDLE LOCAL STORAGE DISABLED
+	const [localStorageEnabled, setLocalStorageEnabled] = useState(true)
 
 	useEffect(() => {
 		console.log('Getting saved items from local storage')
-		const savedItems = JSON.parse(localStorage.getItem('shopping-cart'))
-		if (savedItems) setItems(savedItems)
+		try {
+			const savedItems = JSON.parse(localStorage.getItem('shopping-cart'))
+			if (savedItems) setItems(savedItems)
+		} catch (error) {
+			setLocalStorageEnabled(false)
+			console.warn('Unable to access local storage - ' + error)
+		}
 	}, [])
 
 	function updateLocalStorage (updatedItems) {
+		if (!localStorageEnabled) return
 		console.log('Updating local storage')
-		localStorage.setItem('shopping-cart', JSON.stringify(updatedItems))
+		try {
+			localStorage.setItem('shopping-cart', JSON.stringify(updatedItems))
+		} catch (error) {
+			setLocalStorageEnabled(false)
+			console.warn('Unable to access local storage - ' + error)
+		}
 	}
 
 	function clearCart () {
